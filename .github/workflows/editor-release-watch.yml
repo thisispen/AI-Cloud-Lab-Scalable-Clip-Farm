@@ -1,0 +1,24 @@
+name: Observe editor updates (read-only)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '21 13 * * 1'
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check approved public GitHub repositories (no installs)
+        run: python -m studio.release_watch --check-online --out release-report.json
+      - name: Publish read-only report
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-report
+          path: release-report.json
+          retention-days: 7

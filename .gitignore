@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+**/node_modules/
+.expo/
+**/.expo/
+output/
+exports/
+data/
+.DS_Store
+*.log
+*.sqlite
+*.sqlite3
+__pycache__/
+.pytest_cache/
+
+# Scalable farm scratch and persistent private job state
+farm-data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

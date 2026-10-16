@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "source": "/absolute/path/to/your-authorized-long-video.mp4",
+  "rights_note": "Source belongs to you or you have a license to download, transform, and distribute it.",
+  "clips": [
+    {"id": "hook-001", "start": 30, "end": 55, "title": "A strong hook after human review", "approved": true},
+    {"id": "lesson-002", "start": 300, "end": 330, "title": "A complete interesting idea", "approved": true}
+  ]
+}

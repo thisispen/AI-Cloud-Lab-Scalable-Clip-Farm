@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-14",
+  "warning": "Prices are planning snapshots in USD, NOT quotes. Confirm official provider plans, licensing, and availability before any purchase. No paid integration is enabled by this catalog.",
+  "generation_models": [
+    {"id":"veo31_lite_720","name":"Google Veo 3.1 Lite 720p + audio","provider":"Google","capabilities":["cinematic","social","ads","text_to_video","image_to_video","native_audio","vertical"],"usd_per_generated_second":0.05,"integration":"official_api","connected":false,"requires_paid_approval":true,"official_pricing":"https://ai.google.dev/gemini-api/docs/pricing"},
+    {"id":"veo31_fast_720","name":"Google Veo 3.1 Fast 720p + audio","provider":"Google","capabilities":["cinematic","social","ads","text_to_video","image_to_video","native_audio","vertical"],"usd_per_generated_second":0.10,"integration":"official_api","connected":false,"requires_paid_approval":true,"official_pricing":"https://ai.google.dev/gemini-api/docs/pricing"},
+    {"id":"veo31_standard_1080","name":"Google Veo 3.1 Standard 1080p + audio","provider":"Google","capabilities":["cinematic","social","ads","text_to_video","image_to_video","native_audio","vertical"],"usd_per_generated_second":0.40,"integration":"official_api","connected":false,"requires_paid_approval":true,"official_pricing":"https://ai.google.dev/gemini-api/docs/pricing"},
+    {"id":"runway_gen4_turbo","name":"Runway Gen-4 Turbo","provider":"Runway","capabilities":["cinematic","social","ads","image_to_video","vertical"],"usd_per_generated_second":0.05,"integration":"official_api","connected":false,"requires_paid_approval":true,"official_pricing":"https://docs.dev.runwayml.com/guides/pricing/"},
+    {"id":"runway_gen45","name":"Runway Gen-4.5","provider":"Runway","capabilities":["cinematic","social","ads","text_to_video","image_to_video","vertical"],"usd_per_generated_second":0.12,"integration":"official_api","connected":false,"requires_paid_approval":true,"official_pricing":"https://docs.dev.runwayml.com/guides/pricing/"},
+    {"id":"ltx_local_gpu","name":"LTX open-weight model on rented GPU","provider":"self-hosted","capabilities":["cinematic","social","text_to_video","image_to_video"],"usd_per_generated_second":null,"integration":"self_hosted_GPU","connected":false,"requires_paid_approval":true,"official_pricing":null,"notes":"Requires a measured workload-specific GPU benchmark before estimating a per-second cost; GPU VRAM and model license may vary."}
+  ],
+  "editors": [
+    {"id":"ffmpeg","name":"FFmpeg","best_for":["batch","social","ads","longform","captions","exports","audio_mix"],"kind":"command_line","automation":"supported","monthly_usd":0,"included_in_codespace":true,"url":"https://ffmpeg.org/"},
+    {"id":"remotion","name":"Remotion","best_for":["batch","social","ads","captions","motion_graphics"],"kind":"code","automation":"supported_with_code","monthly_usd":0,"license_note":"Free for eligible individuals and organizations of up to 3; paid for larger teams and some use cases. Confirm current license.","included_in_codespace":false,"url":"https://www.remotion.dev/docs/license"},
+    {"id":"davinci_free","name":"DaVinci Resolve (free)","best_for":["cinematic","ads","longform","color","sound"],"kind":"desktop","automation":"manual_or_scripting_depending_on_install","monthly_usd":0,"included_in_codespace":false,"requirements":"Heavy native GUI, requires suitable GPU/system; not practical on minimal free 2-core Codespace.","url":"https://www.blackmagicdesign.com/products/davinciresolve"},
+    {"id":"kdenlive","name":"Kdenlive","best_for":["cinematic","social","longform","captions"],"kind":"desktop","automation":"manual","monthly_usd":0,"included_in_codespace":false,"url":"https://kdenlive.org/"},
+    {"id":"capcut_free","name":"CapCut Free","best_for":["social","ads","captions"],"kind":"browser_or_desktop","automation":"manual_not_general_public_api","monthly_usd":0,"included_in_codespace":false,"url":"https://www.capcut.com/pricing"},
+    {"id":"capcut_pro","name":"CapCut Pro","best_for":["social","ads","captions"],"kind":"browser_or_desktop","automation":"manual_not_general_public_api","monthly_usd":19.99,"included_in_codespace":false,"requires_paid_approval":true,"url":"https://www.capcut.com/pricing"},
+    {"id":"descript_creator","name":"Descript Creator","best_for":["talking_head","podcast","captions","social"],"kind":"web_or_desktop","automation":"supported_via_connected_app_if_granted","monthly_usd":35,"included_in_codespace":false,"requires_paid_approval":true,"url":"https://www.descript.com/pricing"},
+    {"id":"premiere","name":"Adobe Premiere Pro","best_for":["cinematic","ads","longform","advanced_vfx"],"kind":"desktop","automation":"UXP_plugins_requires_install_and_license","monthly_usd":22.99,"billing_note":"Annual plan billed monthly; early termination terms may apply.","included_in_codespace":false,"requires_paid_approval":true,"url":"https://www.adobe.com/products/premiere/plans.html"},
+    {"id":"losslesscut","name":"LosslessCut","best_for":["batch","rough_cut","longform"],"kind":"desktop","automation":"limited_CLI","monthly_usd":0,"included_in_codespace":false,"url":"https://github.com/mifi/lossless-cut"}
+  ],
+  "platforms": {
+    "tiktok":{"layout":"vertical","workflow":"social"},
+    "reels":{"layout":"vertical","workflow":"social"},
+    "facebook_ads":{"layout":"vertical","workflow":"ads"},
+    "youtube_shorts":{"layout":"vertical","workflow":"social"},
+    "youtube_long":{"layout":"horizontal","workflow":"longform"}
+  },
+  "official_watch_repositories": ["remotion-dev/remotion", "Comfy-Org/ComfyUI", "mltframework/shotcut", "mifi/lossless-cut"]
+}

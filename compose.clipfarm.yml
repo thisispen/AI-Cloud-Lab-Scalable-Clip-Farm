@@ -1,0 +1,17 @@
+# Default: no running service until you explicitly run docker compose up.
+# Single Linux host ONLY: SQLite and the scratch files MUST be on the same host.
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    environment:
+      FARM_ROOT: /farm
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ${FARM_DIR:-./farm-data}:/farm
+    restart: unless-stopped
+    mem_limit: 2g
+    cpus: 1.0
+    # Intentionally no ports or web admin endpoints: private CPU-only workers.

@@ -1,0 +1,48 @@
+{
+  "name": "AI Cloud Lab \u2014 Browser Linux Desktop + Codex",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "remoteUser": "node",
+  "forwardPorts": [
+    6080,
+    8081,
+    3000
+  ],
+  "portsAttributes": {
+    "6080": {
+      "label": "Private Cloud Desktop (noVNC)",
+      "onAutoForward": "notify",
+      "visibility": "private"
+    },
+    "8081": {
+      "label": "Expo development server",
+      "onAutoForward": "silent"
+    },
+    "3000": {
+      "label": "Web app preview",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "bash scripts/bootstrap.sh && bash scripts/install-agents.sh",
+  "postStartCommand": "bash scripts/start-desktop.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

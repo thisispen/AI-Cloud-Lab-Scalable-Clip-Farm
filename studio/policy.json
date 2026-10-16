@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paid_apis_enabled": false,
+  "automated_purchases_enabled": false,
+  "production_auto_publish_enabled": false,
+  "monthly_max_new_spend_usd": 0,
+  "max_single_generation_spend_usd": 0,
+  "require_approval_for_new_vendor": true,
+  "require_approval_for_new_paid_model": true,
+  "require_approval_for_app_installation_and_upgrades": true,
+  "require_review_before_campaign_launch": true,
+  "access_tokens": "Store only in provider secret managers, never catalog, scripts, logs, or git."
+}
